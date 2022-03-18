@@ -88,6 +88,11 @@ def get_training_data(data,params,tokenizer):
     text_list=[]
     attention_list=[]
     label_list=[]
+    
+    # added by EWC to try to get token type IDs out
+    #token_type_id_list = []
+    
+    
     count=0
     count_confused=0
     print('total_data',len(data))
@@ -106,6 +111,11 @@ def get_training_data(data,params,tokenizer):
             text_list.append(tokens_all)
             label_list.append(annotation)
             post_ids_list.append(post_id)
+            
+            # added by EWC
+#             tti = tokenizer(row['text']).token_type_ids
+#             token_type_id_list.append(tti)
+                
         else:
             count_confused+=1
             
@@ -113,8 +123,8 @@ def get_training_data(data,params,tokenizer):
     print("no_majority:",count_confused)
     # Calling DataFrame constructor after zipping 
     # both lists, with columns specified 
-    training_data = pd.DataFrame(list(zip(post_ids_list,text_list,attention_list,label_list)), 
-                   columns =['Post_id','Text', 'Attention' , 'Label']) 
+    training_data = pd.DataFrame(list(zip(post_ids_list,text_list,attention_list, label_list)), 
+                   columns =['Post_id','Text', 'Attention', 'Label']) 
     
     
     filename=set_name(params)
