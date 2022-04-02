@@ -1,0 +1,2 @@
+model_checkpoint_path: "EDA_sr_large"
+all_model_checkpoint_paths: "EDA_sr_large"

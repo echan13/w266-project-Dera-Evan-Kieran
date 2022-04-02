@@ -1,0 +1,2 @@
+model_checkpoint_path: "NLA_ins_base"
+all_model_checkpoint_paths: "NLA_ins_base"

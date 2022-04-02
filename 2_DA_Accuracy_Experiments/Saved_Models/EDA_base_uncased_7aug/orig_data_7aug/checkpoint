@@ -1,0 +1,2 @@
+model_checkpoint_path: "orig_data_7aug"
+all_model_checkpoint_paths: "orig_data_7aug"
