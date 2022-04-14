@@ -1,0 +1,2 @@
+model_checkpoint_path: "original_data_base"
+all_model_checkpoint_paths: "original_data_base"
